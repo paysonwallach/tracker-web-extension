@@ -5,10 +5,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const SizePlugin = require("size-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const SizePlugin = require("size-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const WextManifestWebpackPlugin = require("wext-manifest-webpack-plugin");
-const ZipPlugin = require("zip-webpack-plugin");
 
 const dataPath = path.join(__dirname, "data");
 const destPath = path.join(__dirname, "distribution");
@@ -110,11 +108,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      // Buffer: 'buffer',
-      process: "process/browser",
-    }),
-    new SizePlugin(),
     new WextManifestWebpackPlugin(),
     new webpack.SourceMapDevToolPlugin({ filename: false }),
     new CopyWebpackPlugin({
@@ -150,11 +143,6 @@ module.exports = {
         cssProcessorPluginOptions: {
           preset: ["default", { discardComments: { removeAll: true } }],
         },
-      }),
-      new ZipPlugin({
-        path: destPath,
-        extension: "zip",
-        filename: `${targetBrowser}`,
       }),
     ],
   },
