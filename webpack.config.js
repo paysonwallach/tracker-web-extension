@@ -17,7 +17,6 @@ const viewsPath = path.join(dataPath, "views");
 const targetBrowser = process.env.TARGET_BROWSER;
 
 module.exports = {
-  devtool: false, // https://github.com/webpack/webpack/issues/1194#issuecomment-560382342
   stats: {
     all: false,
     builtAt: true,
@@ -47,17 +46,14 @@ module.exports = {
     fallback: {
       assert: require.resolve("assert"),
       buffer: require.resolve("buffer"),
-      child_process: false, // require.resolve("child_process"),
       crypto: require.resolve("crypto-browserify"),
-      fs: false, // require.resolve("fs"),
       http: require.resolve("stream-http"),
       https: require.resolve("https-browserify"),
-      net: false, // require.resolve("net"),
       os: require.resolve("os-browserify/browser"),
       path: require.resolve("path-browserify"),
+      process: "process/browser",
       querystring: require.resolve("querystring-es3"),
       stream: require.resolve("stream-browserify"),
-      tls: false, // require.resolve("tls"),
       url: require.resolve("url"),
       util: require.resolve("util"),
       "webext-options-sync": require.resolve("webext-options-sync"),
