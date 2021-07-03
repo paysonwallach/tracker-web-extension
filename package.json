@@ -109,6 +109,23 @@
       "last 1 safari version"
     ]
   },
+  "meta": {
+    "title": "Tracker Web Extension",
+    "repository": {
+      "owner": "paysonwallach",
+      "name": "tracker-web-extension"
+    },
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "url": "https://github.com/paysonwallach/tracker-web-extension/blob/master/LICENSE"
+    },
+    "codeOfConduct": {
+      "url": "https://github.com/paysonwallach/tracker-web-extension/blob/master/CODE_OF_CONDUCT.md"
+    },
+    "releases": {
+      "url": "https://github.com/paysonwallach/tracker-web-extension/releases"
+    }
+  },
   "standard-version": {
     "scripts": {
       "precommit": "npm run build:meta"
