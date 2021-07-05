@@ -1,5 +1,6 @@
 module.exports = {
   reject: [
-    'normalize-url'
+    'normalize-url',
+    'size-plugin'
   ]
 }
